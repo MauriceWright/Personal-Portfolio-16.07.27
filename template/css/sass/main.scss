@@ -1,5 +1,61 @@
 @import 'normalize', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	font-weight: 300;
+
+	h1,h2,h3,h4,h5 {
+		font-weight: 400;
+	}
+}
+
+header {
+	background-color: black;
+	color: white;
+	overflow: hidden;
+
+	a:link,a:hover,a:visited,a:active {
+		color: white;
+		text-decoration: none;
+	}
+}
+
 .logo-header {
 	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Zz48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMyQUM0M0IiIHN0cm9rZS13aWR0aD0iNDAuOTUyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yNzYuMzU4LDMzMy40MTQgbC05Ni45MTUtOTYuOTFjLTMxLjY3My0zMS42NjgtODMuMDItMzEuNjY4LTExNC42ODksMGMtMzEuNjcxLDMxLjY3LTMxLjY3MSw4My4wMjEsMCwxMTQuNjg5bDk2LjkxNCw5Ni45MTQiLz48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMyQUM0M0IiIHN0cm9rZS13aWR0aD0iNDAuOTUyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0zOTEuMDQ3LDIxOC43MjUgbC05Ni45MTQtOTYuOTE1Yy0zMS42NjktMzEuNjcxLTgzLjAyLTMxLjY3MS0xMTQuNjg5LDBjLTMxLjY3MywzMS42NzYtMzEuNjczLDgzLjAyNiwwLDExNC42OTRsOTYuOTE1LDk2LjkxIi8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkFDNDNCIiBzdHJva2Utd2lkdGg9IjQwLjk1MjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMjM2LjIxNywxNzguNTgyIGw5Ni4zMzcsOTYuMzQyYzMxLjY3LDMxLjY3NCw4My4wMjMsMzEuNjc0LDExNC42OTMsMGMzMS42NzEtMzEuNjcyLDMxLjY3MS04My4wMTgsMC0xMTQuNjkxbC05Ni4zNDQtOTYuMzM5Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkFDNDNCIiBzdHJva2Utd2lkdGg9IjQwLjk1MjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMTIxLjUyNSwyOTMuMjczIGw5Ni4zNCw5Ni4zNDJjMzEuNjcsMzEuNjcyLDgzLjAyMSwzMS42NzIsMTE0LjY4OCwwYzMxLjY3LTMxLjY3NCwzMS42Ny04My4wMTgsMC0xMTQuNjkxbC05Ni4zMzctOTYuMzQyIi8+PC9nPjwvc3ZnPg==) no-repeat;
+	display: block;
+	overflow: hidden;
+	margin: 5px;
+	padding: 0 0 0 56px;
+
+	h1,h2 {
+		// font-size: 1em;
+		line-height: 1.25em;
+		margin: 0;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	h2 {
+		font-size: 1em;
+		font-style: italic;
+		font-weight: 300;
+	}
+}
+
+.nav-bar {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+
+	li {
+		display: block;
+		float: left;
+		width: 25%;
+	}
 }
