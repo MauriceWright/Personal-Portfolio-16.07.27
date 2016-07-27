@@ -8,6 +8,7 @@ This is my personal portfolio website from start to finish for 2016. I am starti
 		* [JS Hint](https://github.com/gruntjs/grunt-contrib-jshint) (v1.0.0)
 		* [Uglify](https://github.com/gruntjs/grunt-contrib-uglify) (v2.0.0)
 		* [Sass](https://github.com/sindresorhus/grunt-sass) (v1.2.0)
+		* [Watch](https://github.com/gruntjs/grunt-contrib-watch) (v1.0.0)
 	* [Submlime Text](https://www.sublimetext.com/) (v3)
 	* [GitHub](https://desktop.github.com/) (v220)
 	* [Adobe CS6](http://www.adobe.com/products/cs6.html) Master Collection
