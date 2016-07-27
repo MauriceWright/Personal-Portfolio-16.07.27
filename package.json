@@ -1,0 +1,7 @@
+{
+  "name": "personal-portfolio",
+  "version": "16.07.27",
+  "devDependencies": {
+    "grunt": "~1.0.1"
+  }
+}
