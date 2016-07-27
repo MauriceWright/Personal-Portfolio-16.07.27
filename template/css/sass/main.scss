@@ -48,14 +48,40 @@ header {
 }
 
 .nav-bar {
-	margin: 0;
+	margin: 5px 0;
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
 
 	li {
+		border-right: 1px solid #666;
 		display: block;
 		float: left;
 		width: 25%;
+
+		a {
+			display: block;
+		}
+	}
+
+	li:last-child {
+		border-right: none;
+	}
+}
+
+.nav-icon {
+	svg,span {
+		display: block;
+	}
+
+	svg {
+		fill: #999;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+	}
+
+	span {
+		text-align: center;
 	}
 }
