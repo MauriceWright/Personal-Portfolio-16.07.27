@@ -11,6 +11,8 @@ $my-black: rgb(34, 34, 34);
 html {
 	min-width: 300px;
 	font-weight: 300;
+	font-size: 20px;
+	letter-spacing: 0.025em;
 
 	h1,h2,h3,h4,h5 {
 		font-weight: 400;
@@ -43,11 +45,11 @@ header {
 	}
 
 	h1 {
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 
 	h2 {
-		font-size: 1em;
+		font-size: 0.75em;
 		font-style: italic;
 		font-weight: 300;
 	}
@@ -81,7 +83,7 @@ header {
 }
 
 nav {
-	display: none;
+	// display: none;
 }
 
 nav ul {
