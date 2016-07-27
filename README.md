@@ -19,3 +19,6 @@ This is my personal portfolio website from start to finish for 2016. I am starti
 * Sass -> CSS3
 * jQuery -> Javascript
 * PHP -> WordPress
+
+## Coding Tools & Frameworks
+* [Normalize](http://necolas.github.io/normalize.css/)
