@@ -25,16 +25,16 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
+    <header class="header-wrap">
         <!-- Logo link -->
-        <a class="logo-header" href="">
-            <h1>Maurice Wright</h1>
-            <h2>Innovation through code.</h2>
-        </a>
+        <div class="header-logo">
+            <h1><a href="/" title="MauriceWright.info">MauriceWright.info</a></h1>
+            <h2><a href="/" title="MauriceWright.info">Maurice Wright<span>-Front-end Designer &amp; Developer</span></a></h2>
+        </div>
 
         <!-- Menu button -->
         <button class="menu-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 32"><path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path><path d="M31 14l6 6 6-6z"></path></svg>
+            <svg class="selected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 32"><path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path><path d="M31 14l6 6 6-6z"></path></svg>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 32"><path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path><path d="M31 20l6-6 6 6z"></path></svg>
         </button>
 
@@ -59,11 +59,17 @@
         </nav>
     </header>
 
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <!-- Content area -->
+    <div class="page-wrap">
+        <div class="intro">
+            <h3>Coding is my passion!</h3>
+            <p>I&#39;m an all-goes kind of guy welcoming the challenges coding for the web has to offer. From HTML5 to Adobe Flash applications, I approach each project with excitement and willingness to expand my knowledge. I can&#39;t even think in the box because I never saw one before! Find out more <a href="">here</a>.</p>
+        </div>
+    </div>
 
     <footer>
         <!-- Information -->
-        <p>This site is designed, coded by, and maintained by <a href="mailto:ki4pzs@gmail.com">Maurice Wright</a>. Hosted by <a href="http://www.mediatemple.net">Media Temple</a>, built with <a href="http://www.wordpress.org">WordPress</a>, and icons provided by <a href="http://www.icomonn.io">Ico Moon</a>. Any and all opinions are the author&#39;s own and do not reflect the views and/or opinions of affiliated or mentioned companies and organizations.</p>
+        <p>This site is hand-crafted by <a href="mailto:ki4pzs@gmail.com">Maurice Wright</a>. Hosted by <a href="http://www.mediatemple.net">Media Temple</a>, built with <a href="http://www.wordpress.org">WordPress</a>, and icons provided by <a href="http://www.icomonn.io">Ico Moon</a>. Any and all opinions are my own and do not reflect the views and/or opinions of affiliated/mentioned companies/organizations.</p>
 
         <!-- Site navigation -->
         <ul class="nav-foot">
@@ -76,9 +82,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script> -->
-    <!-- <script src="js/plugins.js"></script> -->
-    <!-- <script src="js/main.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+    <script src="js/build.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>
