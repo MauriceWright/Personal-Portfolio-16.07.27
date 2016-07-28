@@ -92,10 +92,6 @@ html {
 			height: 40px;
 			fill: $my-green;
 		}
-
-		svg:nth-child(2) {
-			display: none;
-		}
 	}
 
 	.menu-icon:focus {
@@ -130,7 +126,7 @@ html {
 			width: 30px;
 			height: 30px;
 			margin: 0 auto;
-			fill: $my-green;
+			fill: $my-black;
 		}
 
 		span {
