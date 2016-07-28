@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 			// if navigation is visible...
 			$('.header-wrap').animate({
-				top: '-73px'
+				top: '-63px'
 			}, 'fast', function(){
 				$('.nav-icon svg').css({
 					fill: 'rgb(34, 34, 34)',

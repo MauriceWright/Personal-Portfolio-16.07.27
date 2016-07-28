@@ -1,10 +1,13 @@
-        <footer>
-            Handcrafted by Maurice Wright.
-        </footer>
+        <footer>Handcrafted by Maurice Wright.</footer>
     </div>
 
+    <!-- Load jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- jQuery fall-back if Google fails -->
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+
+    <!-- Page scripts -->
     <script src="js/build.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

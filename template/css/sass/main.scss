@@ -19,10 +19,19 @@ html {
 	}
 }
 
+.page-main {
+	background: $my-grey url(../img/me_use_1024_H.jpg) no-repeat center bottom;
+	background-size: 100% auto;
+	min-height: 100%;
+	position: absolute;
+	right: 0;
+	left: 0;
+}
+
 .header-wrap {
 	background-color: $my-black;
 	position: relative;
-	top: -73px;
+	top: -63px;
 	height: 120px;
 }
 
@@ -32,10 +41,9 @@ html {
 	bottom: 5px;
 	left: 0;
 	right: 0;
-	overflow: hidden;
-	height: 40px;
-	margin: 5px;
-	padding: 5px 0 0 0;
+	height: 45px;
+	margin: 5px 30px;
+	padding: 5px 0;
 
 	.header-logo {
 		h1,h2 {
@@ -86,6 +94,7 @@ html {
 		border: none;
 		padding: 0;
 		outline: 0;
+		margin: 0 -15px 0 0;
 
 		svg {
 			width: 40px;
@@ -146,22 +155,15 @@ html {
 .page-wrap {
 	min-height: 100%;
 	position: relative;
-	padding: 10px;
+	padding: 10px 30px;
 	margin-top: -5px;
-}
-
-.page-main {
-	background: $my-grey url(../img/me_use_1024_H.jpg) no-repeat center bottom;
-	background-size: 100% auto;
-	min-height: 100%;
-	position: absolute;
 }
 
 .intro {
 	color: white;
 
 	h3 {
-		font-size: 36px;
+		font-size: 32px;
 		margin: 0 0 18px 0;
 	}
 
@@ -170,15 +172,82 @@ html {
 	}
 }
 
+.social-icons {
+	display: none;
+	width: 500px;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+
+		li {
+			width: 1 / 7 * 100%;
+			height: 40px;
+			float: left;
+
+			a {
+				display: block;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+
+				svg {
+					width: 100%;
+					height: 100%;
+					fill: white;
+				}
+			}
+
+			a:hover {
+				svg {
+					-webkit-filter: drop-shadow(-5px -5px 5px white);
+					filter: drop-shadow(-5px -5px 5px white);
+				}
+			}
+		}
+
+		li:nth-child(1) a:hover svg { fill: rgb(59,89,152); }
+		li:nth-child(2) a:hover svg { fill: rgb(0,0,0); }
+		li:nth-child(3) a:hover svg { fill: rgb(221,75,57); }
+		li:nth-child(4) a:hover svg { fill: rgb(18,86,136); }
+		li:nth-child(5) a:hover svg { fill: rgb(185,0,0); }
+		li:nth-child(6) a:hover svg { fill: rgb(0,123,181); }
+		li:nth-child(7) a:hover svg { fill: rgb(85,172,238); }
+	}
+}
+
 footer {
 	background: $my-black;
 	color: $my-green;
 	height: 40px;
 	line-height: 40px;
-	padding: 0 5px;
+	padding: 0 30px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	font-size: 14px;
+}
+
+@media (min-width: 640px) {
+	.page-main {
+		background-position: 0 -50px;
+	}
+
+	.intro {
+		h3 {
+			font-size: 60px;
+		}
+
+		p {
+			font-size: 18px;
+			width: 500px;
+		}
+	}
+
+	.social-icons {
+		display: block;
+	}
 }
