@@ -63,7 +63,7 @@
 
     <footer>
         <!-- Information -->
-        <p>This site is hand-crafted by <a href="mailto:ki4pzs@gmail.com">Maurice Wright</a>. Hosted by <a href="http://www.mediatemple.net">Media Temple</a>, built with <a href="http://www.wordpress.org">WordPress</a>, and icons provided by <a href="http://www.icomonn.io">Ico Moon</a>. Any and all opinions are my own and do not reflect the views and/or opinions of affiliated/mentioned companies/organizations.</p>
+        <p>Handcrafted by Maurice Wright.</p>
 
         <!-- Site navigation -->
         <ul class="nav-foot">
