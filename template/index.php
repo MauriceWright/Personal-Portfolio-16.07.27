@@ -8,18 +8,4 @@
         </div>
     </div>
 
-    <footer>
-        <!-- Information -->
-        <p>Handcrafted by Maurice Wright.</p>
-
-        <!-- Site navigation -->
-        <ul class="nav-foot">
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Thoughts</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </footer>
-
 <?php include('footer.php'); ?>
