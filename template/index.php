@@ -1,11 +1,11 @@
-<?php include('header.php'); ?>
+<?php $class='page-main'; include('header.php'); ?>
 
-    <!-- Content area -->
-    <div class="page-wrap">
-        <div class="intro">
-            <h3>Coding is my passion!</h3>
-            <p>I&#39;m an all-goes kind of guy welcoming the challenges coding for the web has to offer. From HTML5 to Adobe Flash applications, I approach each project with excitement and willingness to expand my knowledge. I can&#39;t even think in the box because I never saw one before! Find out more <a href="">here</a>.</p>
+        <!-- Content area -->
+        <div class="page-wrap">
+            <div class="intro">
+                <h3>Hello! I&#39;m Maurice.</h3>
+                <p>Front-end designer &amp; developer of Tallahassee, FL. While still &quot;new&quot; in the industry, I&#39;ve worked on small local projects. I also enjoy the challenge of expanding my abilities with new styles and scripts.</p>
+            </div>
         </div>
-    </div>
 
 <?php include('footer.php'); ?>
