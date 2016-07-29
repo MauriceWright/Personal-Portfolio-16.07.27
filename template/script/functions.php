@@ -13,7 +13,7 @@
 
 		// If file exists and is recent, return data
 		if(file_exists($file) && ($currentTime - $expireTime < $fileTime)) {
-			return json_decode(file_get_contents($file));
+			return file_get_contents($file);
 		}
 
 		// If file does not exist or is not recent
@@ -36,7 +36,7 @@
 				file_put_contents($file, json_encode($json));
 
 				// Return JSON data for use
-				return $json;
+				return json_encode($json);
 			}
 		}
 	}
@@ -48,7 +48,7 @@
 		$key = FM_KEY;
 
 		// Request API data
-		$json = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ki4pzs&api_key='.$key.'&format=json&limit=12');
+		$json = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ki4pzs&api_key='.$key.'&format=json&limit=11');
 
 	    // Return results
 	    if(!$json) { // If data is not in JSON format, send custom error

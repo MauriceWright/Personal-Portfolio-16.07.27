@@ -69,17 +69,17 @@
             </div>
 
             <!-- Last FM feed -->
+            <? $fm = json_decode(getLastFm()); ?>
             <div class="feed-lastfm">
                 <h3>Recent tracks on Last FM</h3>
-                <? $fm = getLastFm(); ?>
-                <ul class="fm-tracks">
+                <ul class="fm-tracks" data-time="<? echo $fm->{'time'}; ?>">
                     <!-- Last FM API feed -->
                     <? foreach ($fm->{'tracks'} as $track) : ?>
                     <li class="fm-track"><a href="<? echo $track->{'url'}; ?>">
-                        <img src="<? echo $track->{'image-lg'}; ?>" alt="<? echo htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?> &bull; <? echo $track->{'artist'}; ?>" class="fm-image">
+                        <? if(empty($track->{'image-lg'})){ include('img/Logo.svg'); }else{ echo '<img src="'.$track->{'image-lg'}.'" alt="'.htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8').' &bull '.$track->{'artist'}.'" class="fm-image">'; } ?>
                         <dl class="fm-data">
-                            <dt><? echo $track->{'title'}; ?></dt>
-                            <dd><? echo $track->{'artist'}; ?></dd>
+                            <dt><? echo htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?></dt>
+                            <dd><? echo htmlentities($track->{'artist'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?></dd>
                         </dl>
                     </a></li>
 
