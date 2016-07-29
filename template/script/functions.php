@@ -1,107 +1,103 @@
 <?
-	function getLastFm()
+	function getLastFm() // Get and write cache JSON data
 	{
-		// Search and return caching file, okay if not found
-		$filename = dirname(__FILE__).'/data/lastfm.json';
+		// File path
+		$file = dirname(__FILE__).'/data/lastfm.json';
 
-		// Check and cache data if needed, create file if needed too
-		cache_lastfm_api($filename);
+		// Time management
+		$currentTime = time();
+		$expireTime = 0.25 * 60 * 60; // H * 60 * 60
 
-		// return and decode JSON data from cached file
-		$data = file_get_contents($filename);
-		return json_decode($data);
-	}
+		// If the file exists, get time of last write
+		if(file_exists($file)) { $fileTime = filemtime($file); }
 
-	function cache_lastfm_api($filename)
-	{
-		// Check if file already exists
-		if (file_exists($filename))
-		{
-			// Compare last caching time, if more than 5 minutes, pull new data from LastFM API
-			if (filemtime($filename) < (time() - 5*60))
-			{
-				$file = fopen($filename, 'w');
-
-				// Clean up API and get only what we need
-				$json = organizeLastfm(lastfm_api_request());
-
-				// Check data before scrubbing file
-				if (!$json->{'status'})
-				{ // If API call failed
-					// Send me error message
-					$message = 'The following error was returned:\r\n\r\nCode\r\n'.$json->{'error'}.'\r\n\r\nDescription\r\n'.$json->{'message'};
-					mail('me@mauricewright.info', 'LastFM API Failure', $message);
-				}
-				else
-				{ // API call was successful
-					// Scrub and write file
-					fwrite($file, json_encode($json));
-					fclose($file);
-				}
-			}
+		// If file exists and is recent, return data
+		if(file_exists($file) && ($currentTime - $expireTime < $fileTime)) {
+			return json_decode(file_get_contents($file));
 		}
-		else
-		{
-			$file = fopen($filename, 'c');
 
-			// Clean up API and get only what we need
+		// If file does not exist or is not recent
+		else {
+			// Get new data from API
 			$json = organizeLastfm(lastfm_api_request());
 
-			fwrite($file, json_encode($json));
-			fclose($file);
+			// If there are any errors, send message and exit
+			if(isset($json->{'error'}) && ($_SERVER['HTTP_HOST'] !== 'localhost:8888')) {
+				// Send me error message via email
+				$message = 'The following error was returned:\r\n\r\nCode\r\n'.$json->{'code'}.'\r\n\r\nDescription\r\n'.$json->{'desc'};
+				mail('me@mauricewright.info', 'LastFM API Failure', $message);
+			}
+			elseif(isset($json->{'error'}) && ($_SERVER['HTTP_HOST'] === 'localhost:8888')){
+				// Send error to PHP log file
+				error_log('Error! Could not get Last FM API to function properly! CODE:'.$json->{'code'}.' MESSAGE:'.addslashes($json->{'desc'}),0);
+			}
+			else {
+				// Write JSON data to file
+				file_put_contents($file, json_encode($json));
+
+				// Return JSON data for use
+				return $json;
+			}
 		}
 	}
 
-	function lastfm_api_request()
+	function lastfm_api_request() // Get recent JSON data from Last FM
 	{
 		// Like I'm going to share my key with you?
 		require_once(dirname(__FILE__).'/data/key.php');
 		$key = FM_KEY;
 
-		// Get API request
+		// Request API data
 		$json = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ki4pzs&api_key='.$key.'&format=json&limit=12');
 
-    // Return results
-    return json_decode($json);
+	    // Return results
+	    if(!$json) { // If data is not in JSON format, send custom error
+	    	return json_decode(file_get_contents(dirname(__FILE__).'/data/lastfmerror.json'));
+	    }
+	    else { // If data is in JSON format, send data
+	    	return json_decode($json);
+	    }
 	}
 
-	function organizeLastfm($json)
+	function organizeLastfm($json) // Make it look pretty
 	{
-		// Check API status, if error, return error data
-		if ($json->{'error'})
-		{
-			$newJson = array('status'=>FALSE,array('code'=>$json->{'error'},'desc'=>$json->{'message'}));
-			return $newJson;
+		if(isset($json->{'error'})){ // If there were any errors, return data
+			return $json;
 		}
-		else
-		{
-			// If status is good, add in pull time for extra check against excessive pulls
-			$newJson = array('status'=>TRUE,'pulled'=>date('M-d-Y|H:i:sT'));
+		else { // If no errors, organize data I want
+			// Start with date and time pulled
+			date_default_timezone_set('America/New_York'); // Set to EST
+			$newJson = array('status'=>TRUE,'time'=>date('M-d-Y|H:i:sT'));
 
-			// The fun part, breaking down the returned JSON data from API
-			$sets = $json->{"recenttracks"}->{"track"};
+			// Grab the data I want to organize
+			$data = $json->{'recenttracks'}->{'track'};
 
-			// Array to store all songs
-			$songs = array();
+			$track = array(); // Array for individual track data
+			$tracks = array(); // Array to hold all tracks
 
-			// Array to store data for each song
-			$song = array();
+			// Breakdown the data for organization
+			foreach ($data as $set){
+				// Grab url to Last FM page
+				$track['url'] = $set->{'url'};
 
-			foreach ($sets as $set)
-			{
-				$song['title'] = $set->{'name'};
-				$song['url'] = $set->{'url'};
-				$song['artist'] = $set->{'artist'}->{'#text'};
-				$song['image-sm'] = $set->{'image'}[1]->{'#text'};
-				$song['image-md'] = $set->{'image'}[2]->{'#text'};
-				$song['image-lg'] = $set->{'image'}[3]->{'#text'};
+				// Grab track information
+				$track['title'] = $set->{'name'};
+				$track['artist'] = $set->{'artist'}->{'#text'};
 
-				array_push($songs,$song);
+				// Grab image url's
+				$track['image-sm'] = $set->{'image'}[1]->{'#text'};
+				$track['image-md'] = $set->{'image'}[2]->{'#text'};
+				$track['image-lg'] = $set->{'image'}[3]->{'#text'};
+
+				// Push track data into tracks array
+				array_push($tracks, $track);
 			}
 
-			array_push($newJson,$songs);
+			// Wrap it all together
+			array_push($newJson, $tracks);
 
-			// Done! now return the golden data
+
+			// Return organized data
 			return $newJson;
 		}
 	}
