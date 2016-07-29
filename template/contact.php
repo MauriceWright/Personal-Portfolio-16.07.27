@@ -1,7 +1,7 @@
 <?
-    $class='page-contact';
+    $page='contact';
     include('header.php');
-    include('/script/functions.php');
+    include('script/functions.php');
 ?>
 
 
@@ -74,7 +74,16 @@
                 <? $fm = getLastFm(); ?>
                 <ul class="fm-tracks">
                     <!-- Last FM API feed -->
-                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+                    <? foreach ($fm->{'tracks'} as $track) : ?>
+                    <li class="fm-track"><a href="<? echo $track->{'url'}; ?>">
+                        <img src="<? echo $track->{'image-lg'}; ?>" alt="<? echo htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?> &bull; <? echo $track->{'artist'}; ?>" class="fm-image">
+                        <dl class="fm-data">
+                            <dt><? echo $track->{'title'}; ?></dt>
+                            <dd><? echo $track->{'artist'}; ?></dd>
+                        </dl>
+                    </a></li>
+
+                    <? endforeach ?>
                 </ul>
             </div>
         </div>
