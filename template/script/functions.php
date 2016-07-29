@@ -25,8 +25,19 @@
 				// Clean up API and get only what we need
 				$json = organizeLastfm(lastfm_api_request());
 
-				fwrite($file, json_encode($json));
-				fclose($file);
+				// Check data before scrubbing file
+				if (!$json->{'status'})
+				{ // If API call failed
+					// Send me error message
+					$message = 'The following error was returned:\r\n\r\nCode\r\n'.$json->{'error'}.'\r\n\r\nDescription\r\n'.$json->{'message'};
+					mail('me@mauricewright.info', 'LastFM API Failure', $message);
+				}
+				else
+				{ // API call was successful
+					// Scrub and write file
+					fwrite($file, json_encode($json));
+					fclose($file);
+				}
 			}
 		}
 		else
@@ -44,7 +55,7 @@
 	function lastfm_api_request()
 	{
 		// Like I'm going to share my key with you?
-		require_once('/data/key.php');
+		require_once(dirname(__FILE__).'/data/key.php');
 		$key = FM_KEY;
 
 		// Get API request
@@ -94,8 +105,4 @@
 			return $newJson;
 		}
 	}
-
-	// echo '<pre>'; var_dump($feed->{'recenttracks'}->{'track'}[0]->{'image'}[3]->{'#text'}); echo '</pre>';
-
-	echo '<pre>'; var_dump(organizeLastfm($feed)); echo '</pre>';
 ?>
