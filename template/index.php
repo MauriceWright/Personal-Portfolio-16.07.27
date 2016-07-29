@@ -1,4 +1,4 @@
-<?php $HClass='page-main'; include('header.php'); ?>
+<?php $Page='main'; include('header.php'); ?>
 
 
         <!-- Content area -->
@@ -51,4 +51,4 @@
             </div>
         </div>
 
-<?php $FClass='footer-main'; include('footer.php'); ?>
+<?php include('footer.php'); ?>

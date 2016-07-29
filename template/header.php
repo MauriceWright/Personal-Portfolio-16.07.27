@@ -26,10 +26,11 @@
     <![endif]-->
 
     <!-- Site wrapper -->
-    <div class="main-wrap <?php echo $HClass; ?>">
+    <div class="main-wrap page-<?php echo $Page; ?>">
         <!-- Header -->
         <header class="header-cont">
             <div class="header-wrap">
+                <!-- Main header bar -->
                 <div class="header-bar">
                     <!-- Logo link -->
                     <div class="header-logo">
