@@ -1,10 +1,13 @@
-@import 'normalize', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
-// @import 'normalize';
+@import 'normalize',
+	'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
+// Color Pallet
 $my-green: rgb(35, 196, 83);
 $my-black: rgb(34, 34, 34);
 $my-grey: rgb(109, 111, 121);
 
+
+// Global Styling
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -19,6 +22,7 @@ html {
 	}
 }
 
+// Index page body wrap
 .page-main {
 	background: $my-grey url(../img/me_use_1024_H.jpg) no-repeat center bottom;
 	background-size: 100% auto;
@@ -28,6 +32,7 @@ html {
 	left: 0;
 }
 
+// Header bar styling
 .header-cont {
 	background-color: $my-black;
 	position: relative;
@@ -152,6 +157,7 @@ html {
 	border: none;
 }
 
+// Page content styling
 .page-wrap {
 	min-height: 100%;
 	position: relative;
@@ -163,6 +169,7 @@ html {
 	// margin-top: -50px;
 }
 
+// Index page styling
 .intro {
 	color: white;
 
@@ -227,6 +234,7 @@ html {
 .lastfm:hover svg { fill: rgb(185,0,0); } // LastFM
 .soundcloud:hover svg { fill: rgb(255,110,0); } // SoundCloud
 
+// Contact page styling
 .contact-icons {
 	ul {
 		list-style: none;
@@ -267,6 +275,7 @@ html {
 	}
 }
 
+// Footer styling
 .footer-main,.footer-contact {
 	background: $my-black;
 	color: $my-green;
@@ -284,6 +293,7 @@ html {
 	position: relative;
 }
 
+// Tablet restyling
 @media (min-width: 640px) {
 	.page-main {
 		background-position: 0 -50px;
@@ -305,6 +315,7 @@ html {
 	}
 }
 
+// Small desktop styling
 @media (min-width: 800px) {
 	.page-main {
 		background-size: 70% auto;
@@ -396,6 +407,7 @@ html {
 	}
 }
 
+// Large desktop styling
 @media (min-width: 1200px) {
 	.header-cont {
 		.header-wrap {
