@@ -28,43 +28,45 @@
     <!-- Site wrapper -->
     <div class="main-wrap <?php echo $class; ?>">
         <!-- Header -->
-        <header class="header-wrap">
-            <div class="header-bar">
-                <!-- Logo link -->
-                <div class="header-logo">
-                    <h1><a href="" title="MauriceWright.info">MauriceWright.info</a></h1>
-                    <h2><a href="" title="MauriceWright.info">Maurice Wright<span>-Front-end Designer &amp; Developer</span></a></h2>
+        <header class="header-cont">
+            <div class="header-wrap">
+                <div class="header-bar">
+                    <!-- Logo link -->
+                    <div class="header-logo">
+                        <h1><a href="" title="MauriceWright.info">MauriceWright.info</a></h1>
+                        <h2><a href="" title="MauriceWright.info">Maurice Wright<span>-Front-end Designer &amp; Developer</span></a></h2>
+                    </div>
+
+                    <!-- Menu button -->
+                    <button class="menu-icon">
+                        <?php include('img/menu3.svg'); ?>
+
+
+                        <?php include('img/menu4.svg'); ?>
+                    </button>
                 </div>
 
-                <!-- Menu button -->
-                <button class="menu-icon">
-                    <?php include('img/menu3.svg'); ?>
+                <!-- Navigational menu -->
+                <nav class="header-nav">
+                    <ul class="nav-bar">
+                        <li><a class="nav-icon" href="" title="My Projects">
+                            <?php include('img/books.svg'); ?>
 
+                            <span>Projects</span>
+                        </a></li>
 
-                    <?php include('img/menu4.svg'); ?>
-                </button>
+                        <li><a class="nav-icon" href="" title="My Thoughts">
+                            <?php include('img/bubbles2.svg'); ?>
+
+                            <span>Thoughts</span>
+                        </a></li>
+
+                        <li><a class="nav-icon" href="" title="Contact Me">
+                            <?php include('img/envelop.svg'); ?>
+
+                            <span>Contact</span>
+                        </a></li>
+                    </ul>
+                </nav>
             </div>
-
-            <!-- Navigational menu -->
-            <nav class="header-nav">
-                <ul class="nav-bar">
-                    <li><a class="nav-icon" href="" title="My Projects">
-                        <?php include('img/books.svg'); ?>
-
-                        <span>Projects</span>
-                    </a></li>
-
-                    <li><a class="nav-icon" href="" title="My Thoughts">
-                        <?php include('img/bubbles2.svg'); ?>
-
-                        <span>Thoughts</span>
-                    </a></li>
-
-                    <li><a class="nav-icon" href="" title="Contact Me">
-                        <?php include('img/envelop.svg'); ?>
-
-                        <span>Contact</span>
-                    </a></li>
-                </ul>
-            </nav>
         </header>

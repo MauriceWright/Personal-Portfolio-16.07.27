@@ -2,10 +2,10 @@ $(document).ready(function(){
 
 	// Top navigation menu toggle
 	$('.menu-icon').click(function(){
-		if($('.header-wrap').hasClass('show-nav')){
+		if($('.header-cont').hasClass('show-nav')){
 
 			// if navigation is visible...
-			$('.header-wrap').animate({
+			$('.header-cont').animate({
 				top: '-63px'
 			}, 'fast', function(){
 				$('.nav-icon svg').css({
@@ -17,7 +17,7 @@ $(document).ready(function(){
 		}else{
 
 			// if navigation is hidden...
-			$('.header-wrap').animate({
+			$('.header-cont').animate({
 				top: 0
 			}, 'fast', function(){
 				$('.nav-icon svg').css({
@@ -28,6 +28,6 @@ $(document).ready(function(){
 				$('.menu-icon svg:nth-child(1)').hide();
 			});
 		}
-		$('.header-wrap').toggleClass('show-nav');
+		$('.header-cont').toggleClass('show-nav');
 	});
 });

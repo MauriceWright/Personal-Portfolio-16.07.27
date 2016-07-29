@@ -16,28 +16,36 @@
                         <?php include('img/facebook.svg'); ?>
                     </a></li>
 
-                    <li><a href="https://www.github.com/MauriceWright" title="Fork my GitHub">
-                        <?php include('img/github.svg'); ?>
+                    <li><a href="https://www.twitter.com/ki4pzs" title="Follow me on Twitter">
+                        <?php include('img/twitter.svg'); ?>
                     </a></li>
 
                     <li><a href="https://plus.google.com/+MauriceWrightki4pzs/about/p/pub" title="Join my circle on Google">
                         <?php include('img/google.svg'); ?>
                     </a></li>
 
+                    <li><a href="https://www.linkedin.com/in/MauriceWright-ki4pzs" title="Connect with me on LinkedIn">
+                        <?php include('img/linkedin.svg'); ?>
+                    </a></li>
+
+                    <li><a href="https://www.github.com/MauriceWright" title="Fork my GitHub">
+                        <?php include('img/github.svg'); ?>
+                    </a></li>
+
                     <li><a href="https://www.instagram.com/ki4pzs/" title="Follow my Instagram">
                         <?php include('img/instagram.svg'); ?>
+                    </a></li>
+
+                    <li><a href="https://www.flickr.com/photos/ki4pzs/" title="View my Flickr">
+                        <?php include('img/flickr.svg'); ?>
                     </a></li>
 
                     <li><a href="http://www.last.fm/user/ki4pzs" title="Hear my favs on Last FM">
                         <?php include('img/lastfm.svg'); ?>
                     </a></li>
 
-                    <li><a href="https://www.linkedin.com/in/MauriceWright-ki4pzs" title="Connect with me on LinkedIn">
-                        <?php include('img/linkedin.svg'); ?>
-                    </a></li>
-
-                    <li><a href="https://www.twitter.com/ki4pzs" title="Follow me on Twitter">
-                        <?php include('img/twitter.svg'); ?>
+                    <li><a href="https://soundcloud.com/maurice-wright-858022962" title="Hear my favs on SoundCloud">
+                        <?php include('img/soundcloud.svg'); ?>
                     </a></li>
                 </ul>
             </div>

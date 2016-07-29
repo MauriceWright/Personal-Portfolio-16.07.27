@@ -1,4 +1,4 @@
-        <footer>Handcrafted by Maurice Wright.</footer>
+        <footer><div class="footer-wrap">Handcrafted by Maurice Wright.</div></footer>
     </div>
 
     <!-- Load jQuery -->

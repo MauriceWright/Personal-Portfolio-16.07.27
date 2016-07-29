@@ -28,7 +28,7 @@ html {
 	left: 0;
 }
 
-.header-wrap {
+.header-cont {
 	background-color: $my-black;
 	position: relative;
 	top: -63px;
@@ -183,14 +183,15 @@ html {
 		overflow: hidden;
 
 		li {
-			width: 1 / 7 * 100%;
+			width: 1 / 9 * 100%;
 			height: 40px;
 			float: left;
+			padding: 0 5px;
 
 			a {
 				display: block;
-				width: 40px;
-				height: 40px;
+				max-width: 40px;
+				max-height: 40px;
 				margin: 0 auto;
 
 				svg {
@@ -208,13 +209,15 @@ html {
 			}
 		}
 
-		li:nth-child(1) a:hover svg { fill: rgb(59,89,152); }
-		li:nth-child(2) a:hover svg { fill: rgb(0,0,0); }
-		li:nth-child(3) a:hover svg { fill: rgb(221,75,57); }
-		li:nth-child(4) a:hover svg { fill: rgb(18,86,136); }
-		li:nth-child(5) a:hover svg { fill: rgb(185,0,0); }
-		li:nth-child(6) a:hover svg { fill: rgb(0,123,181); }
-		li:nth-child(7) a:hover svg { fill: rgb(85,172,238); }
+		li:nth-child(1) a:hover svg { fill: rgb(59,89,152); } // Facebook
+		li:nth-child(2) a:hover svg { fill: rgb(0,172,237); } // Twitter
+		li:nth-child(3) a:hover svg { fill: rgb(221,75,57); } // Google
+		li:nth-child(4) a:hover svg { fill: rgb(0,123,182); } // LinkedIn
+		li:nth-child(5) a:hover svg { fill: rgb(51,51,51); } // GitHub
+		li:nth-child(6) a:hover svg { fill: rgb(81,127,164); } // Instagram
+		li:nth-child(7) a:hover svg { fill: rgb(255,0,132); } // Flikr
+		li:nth-child(8) a:hover svg { fill: rgb(185,0,0); } // LastFM
+		li:nth-child(9) a:hover svg { fill: rgb(255,110,0); } // SoundCloud
 	}
 }
 
@@ -249,5 +252,121 @@ footer {
 
 	.social-icons {
 		display: block;
+	}
+}
+
+@media (min-width: 800px) {
+	.page-main {
+		background-size: 70% auto;
+		background-position: bottom right;
+	}
+
+	.header-cont {
+		top: 0;
+		height: 80px;
+		position: static;
+	}
+
+	.header-bar,.header-nav {
+		float: left;
+	}
+
+	.header-bar {
+		border-top: none;
+		position: static;
+		margin: 0;
+		padding: 10px 0 10px 30px;
+		width: 70%;
+
+		.header-logo {
+			h1 {
+				width: 60px;
+				height: 60px;
+
+				a {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			h2 {
+				height: 60px;
+				width: auto;
+
+				span {
+					display: block;
+					font-weight: 300;
+					font-size: 18px;
+					height: 20px;
+					line-height: 20px;
+					margin: 0 0 0 -10px;
+				}
+			}
+		}
+	}
+
+	.header-nav {
+		position: static;
+		width: 30%;
+		margin: 0;
+		padding: 7.5px 30px 7.5px 0;
+
+		.nav-bar {
+			li:first-child {
+				border-left: 1px solid $my-grey;
+			}
+
+			li:last-child {
+				border-right: 1px solid $my-grey;
+			}
+
+			svg {
+				fill: $my-green;
+			}
+		}
+	}
+
+	.menu-icon {
+		display: none;
+	}
+
+	.intro {
+		padding-top: 60px;
+
+		h3,p {
+			border-left: 3px solid $my-green;
+			width: 500px;
+			padding-left: 5px;
+		}
+	}
+
+	.social-icons {
+		position: fixed;
+		bottom: 70px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.header-cont {
+		.header-wrap {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+	}
+
+	.page-main {
+		background-size: 50% auto;
+		background-position: 600px 0;
+	}
+
+	.page-wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.footer-wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 30px;
 	}
 }
