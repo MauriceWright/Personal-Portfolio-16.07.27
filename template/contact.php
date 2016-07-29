@@ -79,7 +79,7 @@
                         <? if(empty($track->{'image-lg'})){ include('img/Logo.svg'); }else{ echo '<img src="'.$track->{'image-lg'}.'" alt="'.htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8').' &bull '.$track->{'artist'}.'" class="fm-image">'; } ?>
                         <dl class="fm-data">
                             <dt><? echo htmlentities($track->{'title'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?></dt>
-                            <dd><? echo htmlentities($track->{'artist'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?></dd>
+                            <dd>&#9781; <? echo htmlentities($track->{'artist'},ENT_QUOTES|ENT_HTML5,'UTF-8'); ?></dd>
                         </dl>
                     </a></li>
 

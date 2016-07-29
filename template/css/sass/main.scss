@@ -370,6 +370,19 @@ html {
 	.contact-icons,.feed-lastfm {
 		flex: 50%;
 	}
+
+	.fm-data {
+	    background: linear-gradient(to bottom, transparent 0%, transparent 75%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.75) 90%);
+
+		dd {
+		    display: block;
+		    position: absolute;
+		    bottom: 5px;
+		    left: 5px;
+		    margin: 0;
+		    font-size: 12px;
+		}
+	}
 }
 
 // Small desktop styling
@@ -461,6 +474,20 @@ html {
 	.social-icons {
 		position: fixed;
 		bottom: 70px;
+	}
+
+	.contact-icons {
+		flex: 30%;
+	}
+
+	.feed-lastfm {
+		flex: 70%;
+	}
+
+	.fm-tracks {
+		li {
+			flex: 1 / 3 * 100%;
+		}
 	}
 }
 
