@@ -1,4 +1,8 @@
-<?php $class='page-contact'; include('header.php'); ?>
+<?
+    $class='page-contact';
+    include('header.php');
+    include('/script/functions.php');
+?>
 
 
         <!-- Content area -->
@@ -64,14 +68,34 @@
                 </ul>
             </div>
 
-            <!-- Instagram feed -->
-            <div class="feed-instagram">
-                <h3>Recent photos on Instagram</h3>
-            </div>
-
             <!-- Last FM feed -->
             <div class="feed-lastfm">
-                <h3>Recent scrobbles on Last FM</h3>
+                <h3>Recent tracks on Last FM</h3>
+                <ul class="fm-tracks">
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+
+                    <li class="fm-track"><a href=""><img src="" alt="" class="fm-image"></a></li>
+                </ul>
             </div>
         </div>
 
