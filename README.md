@@ -18,7 +18,9 @@ This is my personal portfolio website from start to finish for 2016. I am starti
 * HTML5
 * Sass -> CSS3
 * jQuery -> Javascript
-* PHP -> WordPress
+* WordPress -> PHP
 
 ## Coding Tools & Frameworks
-* [Normalize](http://necolas.github.io/normalize.css/)
+* [Boilerplate](https://html5boilerplate.com/) -> HTML5 starting template
+* [Normalize](http://necolas.github.io/normalize.css/) -> CSS cross-browser normalization tool
+* [WordPress](https://www.wordpress.org) -> Diverse and flexible PHP blog framework
