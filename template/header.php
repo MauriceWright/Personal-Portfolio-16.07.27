@@ -26,7 +26,7 @@
     <![endif]-->
 
     <!-- Site wrapper -->
-    <div class="main-wrap page-<?php echo $Page; ?>">
+    <div class="main-wrap page-<?php echo $page; ?>">
         <!-- Header -->
         <header class="header-cont">
             <div class="header-wrap">

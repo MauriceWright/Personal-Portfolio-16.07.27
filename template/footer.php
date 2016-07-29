@@ -1,5 +1,5 @@
         <!-- Footer -->
-        <footer class="footer-<?php echo $Page; ?>"><div class="footer-wrap">Handcrafted by Maurice Wright.</div></footer>
+        <footer class="footer-<?php echo $page; ?>"><div class="footer-wrap">Handcrafted by Maurice Wright.</div></footer>
     </div>
 
     <!-- Load jQuery -->
