@@ -94,7 +94,7 @@
 			}
 
 			// Wrap it all together
-			array_push($newJson, $tracks);
+			$newJson['tracks'] = $tracks;
 
 
 			// Return organized data
