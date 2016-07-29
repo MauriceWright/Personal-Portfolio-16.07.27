@@ -26,15 +26,15 @@
     <![endif]-->
 
     <!-- Site wrapper -->
-    <div class="main-wrap <?php echo $class; ?>">
+    <div class="main-wrap <?php echo $HClass; ?>">
         <!-- Header -->
         <header class="header-cont">
             <div class="header-wrap">
                 <div class="header-bar">
                     <!-- Logo link -->
                     <div class="header-logo">
-                        <h1><a href="" title="MauriceWright.info">MauriceWright.info</a></h1>
-                        <h2><a href="" title="MauriceWright.info">Maurice Wright<span>-Front-end Designer &amp; Developer</span></a></h2>
+                        <h1><a href="index.php" title="MauriceWright.info">MauriceWright.info</a></h1>
+                        <h2><a href="index.php" title="MauriceWright.info">Maurice Wright<span>-Front-end Designer &amp; Developer</span></a></h2>
                     </div>
 
                     <!-- Menu button -->
@@ -61,7 +61,7 @@
                             <span>Thoughts</span>
                         </a></li>
 
-                        <li><a class="nav-icon" href="" title="Contact Me">
+                        <li><a class="nav-icon" href="contact.php" title="Contact Me">
                             <?php include('img/envelop.svg'); ?>
 
                             <span>Contact</span>
