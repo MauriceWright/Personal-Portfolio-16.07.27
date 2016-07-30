@@ -50,7 +50,7 @@
                 <!-- Navigational menu -->
                 <nav class="header-nav">
                     <ul class="nav-bar">
-                        <li><a class="nav-icon" href="" title="My Projects">
+                        <li><a class="nav-icon" href="projects.php" title="My Projects">
                             <?php include('img/books.svg'); ?>
 
                             <span>Projects</span>
