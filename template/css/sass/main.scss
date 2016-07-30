@@ -35,22 +35,21 @@ html {
 // Header bar styling
 .header-cont {
 	background-color: $my-black;
-	position: relative;
-	top: -63px;
-	height: 120px;
+}
+
+.header-wrap {
+	padding: 5px 10px 5px 30px;
+	overflow: hidden;
 }
 
 .header-bar {
-	border-top: 1px dotted $my-grey;
-	position: absolute;
-	bottom: 5px;
-	left: 0;
-	right: 0;
-	height: 45px;
-	margin: 5px 30px;
-	padding: 5px 0;
+	overflow: hidden;
+	height: 40px;
 
 	.header-logo {
+		display: inline-block;
+		height: 40px;
+
 		h1,h2 {
 			margin: 0;
 			padding: 0;
@@ -72,7 +71,6 @@ html {
 
 		h2 {
 			margin-left: 5px;
-			width: 180px;
 			height: 40px;
 		}
 
@@ -99,7 +97,6 @@ html {
 		border: none;
 		padding: 0;
 		outline: 0;
-		margin: 0 -15px 0 0;
 
 		svg {
 			width: 40px;
@@ -114,10 +111,11 @@ html {
 }
 
 .header-nav {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+	clear: both;
+	padding: 5px 20px 0 0;
+	margin-top: -5px;
+	overflow: hidden;
+	height: 0;
 
 	.nav-bar {
 		margin: 5px 0;
@@ -160,13 +158,13 @@ html {
 // Page content styling
 .page-wrap {
 	min-height: 100%;
-	position: relative;
 	padding: 10px 30px;
 	margin-top: -5px;
 }
 
 // Index page styling
 .intro {
+	padding-top: 70px;
 	color: white;
 
 	h3 {
@@ -210,8 +208,7 @@ html {
 
 			a:hover {
 				svg {
-					-webkit-filter: drop-shadow(-5px -5px 5px white);
-					filter: drop-shadow(-5px -5px 5px white);
+					filter: drop-shadow(0 0 5px white);
 				}
 			}
 		}
@@ -381,6 +378,7 @@ html {
 		    left: 5px;
 		    margin: 0;
 		    font-size: 12px;
+		    height: 14px;
 		}
 	}
 }
@@ -388,14 +386,16 @@ html {
 // Small desktop styling
 @media (min-width: 800px) {
 	.page-main {
-		background-size: 70% auto;
+		background-size: 65% auto;
 		background-position: bottom right;
 	}
 
 	.header-cont {
-		top: 0;
 		height: 80px;
-		position: static;
+
+		.header-wrap {
+			padding-right: 30px;
+		}
 	}
 
 	.header-bar,.header-nav {
@@ -404,10 +404,10 @@ html {
 
 	.header-bar {
 		border-top: none;
-		position: static;
 		margin: 0;
-		padding: 10px 0 10px 30px;
+		padding: 5px 0;
 		width: 70%;
+		height: 70px;
 
 		.header-logo {
 			h1 {
@@ -437,12 +437,15 @@ html {
 	}
 
 	.header-nav {
-		position: static;
+		clear: none;
 		width: 30%;
 		margin: 0;
-		padding: 7.5px 30px 7.5px 0;
+		padding: 7.5px 0;
+		height: 70px;
 
 		.nav-bar {
+			margin: 0;
+
 			li:first-child {
 				border-left: 1px solid $my-grey;
 			}
