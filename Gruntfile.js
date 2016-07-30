@@ -26,10 +26,21 @@ module.exports = function(grunt) {
       }
     },
 
+    autoprefixer: {
+      options: {
+        browsers: ['last 3 versions', 'firefox ESR']
+      },
+      your_target: {
+        files: {
+          'template/css/build.css': 'template/css/build.css'
+        }
+      },
+    },
+
     watch: {
       scripts: {
-        files: ['template/css/sass/*.scss','template/js/dev/*.js'],
-        tasks: ['sass','jshint','uglify'],
+        files: ['template/css/sass/*.scss','template/js/dev/*.js','template/css/*.css'],
+        tasks: ['sass','autoprefixer','jshint','uglify'],
         options: {
           spawn: false,
         },
@@ -37,10 +48,11 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  // Load the plugins.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
