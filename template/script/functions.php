@@ -24,12 +24,18 @@
 			// If there are any errors, send message and exit
 			if(isset($json->{'error'}) && ($_SERVER['HTTP_HOST'] !== 'localhost:8888')) {
 				// Send me error message via email
-				$message = 'The following error was returned:\r\n\r\nCode\r\n'.$json->{'code'}.'\r\n\r\nDescription\r\n'.$json->{'desc'};
+				$message = 'The following error was returned:\r\n\r\nCode\r\n'.$json->{'error'}.'\r\n\r\nDescription\r\n'.$json->{'message'};
 				mail('me@mauricewright.info', 'LastFM API Failure', $message);
+
+				// Use fall-back file
+				return file_get_contents($file);
 			}
 			elseif(isset($json->{'error'}) && ($_SERVER['HTTP_HOST'] === 'localhost:8888')){
 				// Send error to PHP log file
-				error_log('Error! Could not get Last FM API to function properly! CODE:'.$json->{'code'}.' MESSAGE:'.addslashes($json->{'desc'}),0);
+				error_log('Error! Could not get Last FM API to function properly! CODE:'.$json->{'error'}.' MESSAGE:'.addslashes($json->{'message'}),0);
+
+				// Use fall-back file
+				return file_get_contents($file);
 			}
 			else {
 				// Write JSON data to file
@@ -47,8 +53,11 @@
 		require_once(dirname(__FILE__).'/data/key.php');
 		$key = FM_KEY;
 
+		// Set time limit for request
+		$timer = stream_context_create(array('http'=>array('timeout'=>1.5)));
+
 		// Request API data
-		$json = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ki4pzs&api_key='.$key.'&format=json&limit=11');
+		$json = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ki4pzs&api_key='.$key.'&format=json&limit=11',FALSE,$timer);
 
 	    // Return results
 	    if(!$json) { // If data is not in JSON format, send custom error
