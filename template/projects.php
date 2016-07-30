@@ -57,6 +57,8 @@
                 <h3>American Red Cross - Website</h3>
                 <p>Redesigned and maintained the local chapter&#39;s website. Provided guidance on document storage and access through the website. Designed marketing material for ongoing community projects.</p>
             </article>
+
+            <div class="invisible"></div>
         </div>
 
 <?php $FClass='footer-projects'; include('footer.php'); ?>
