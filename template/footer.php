@@ -9,7 +9,7 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
 
     <!-- Page scripts -->
-    <script src="js/build.min.js"></script>
+    <script src="js/dev/build.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>

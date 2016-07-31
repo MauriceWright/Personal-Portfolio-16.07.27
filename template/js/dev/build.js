@@ -36,21 +36,4 @@ $(document).ready(function(){
 		}
 		$('.header-cont').toggleClass('show-nav');
 	});
-
-	// E-Mail Form stuff...
-	// Cancel e-mail link action to open form instead
-	$('.email').click(function(e){
-		e.preventDefault();
-		$('.email-modal').addClass('modal-show');
-	});
-
-	// Function only if form is open
-	if($('.email-modal').hasClass('modal-show')){
-
-		// Close form
-		$('.modal-close').click(function(e){
-			e.preventDefault();
-			$('.email-modal').removeClass('modal-show');
-		});
-	}
 });

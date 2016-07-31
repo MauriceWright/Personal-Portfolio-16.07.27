@@ -88,7 +88,7 @@
             </div>
 
             <!-- E-Mail form -->
-            <div class="email-modal modal-show">
+            <div class="email-modal">
                 <form action="" method="post" class="modal-form">
                     <h3>Send E-Mail</h3>
                     <a href="" class="modal-close" title="close"><? include('img/cancel-circle.svg'); ?></a>
