@@ -86,6 +86,39 @@
                     <? endforeach ?>
                 </ul>
             </div>
+
+            <!-- E-Mail form -->
+            <div class="email-modal modal-show">
+                <form action="" method="post" class="modal-form">
+                    <h3>Send E-Mail</h3>
+                    <a href="" class="modal-close" title="close"><? include('img/cancel-circle.svg'); ?></a>
+                    <p>Please fill out all fields below.</p>
+                    <!-- Form body -->
+                    <fieldset>
+                        <div class="form-element form-name">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" tabindex="1" placeholder="Ash Ketchum">
+                        </div>
+
+                        <div class="form-element form-email">
+                            <label for="email">E-Mail</label>
+                            <input type="email" name="email" id="email" tabindex="2" placeholder="ash025@poke.net">
+                        </div>
+
+                        <div class="form-element form-message">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" tabindex="3" placeholder="I caught one!"></textarea>
+                        </div>
+
+                        <input type="button" id="send" class="form-button" tabindex="4" value="Send E-Mail">
+                    </fieldset>
+
+                    <!-- Sending states -->
+                    <div class="sending"><img src="img/squares.gif" alt="Sending e-mail, please wait..."></div>
+                    <div class="error"><? include('img/cancel-circle.svg'); ?></div>
+                    <div class="success"><? include('img/emoji-happy.svg'); ?></div>
+                </form>
+            </div>
         </div>
 
 <?php $FClass='footer-contact'; include('footer.php'); ?>
