@@ -218,18 +218,21 @@ html {
 	}
 }
 
-// Projects page styling
-.projects-wrap {
+// Projects & Thoughts page styling
+.projects-wrap,.thoughts-wrap {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: stretch;
 
-	.project {
-		flex: 100%;
+	.project,.thought,.pagination { flex: 100%; }
+
+	.project,.thought {
 		background: linear-gradient(to right, rgba(35,196,84,0) 0%, rgba(35,196,84,1) 45%, rgba(35,196,84,1) 55%, rgba(35,196,84,0) 100%) no-repeat center bottom;
 		background-size: 100% 1px;
+	}
 
+	.project{
 		p:last-child { font-size: 14px; }
 
 		.fullsail-project {
@@ -239,7 +242,37 @@ html {
 		}
 	}
 
+	.thought {
+		h3 { margin-bottom: 5px; }
+		h3 a { text-decoration: none; }
+		h3 a:link,h3 a:visited { color: $my-black; }
+		h3 a:hover,h3 a:active { color: $my-green; }
+
+		time {
+			display: block;
+			font-size: 14px;
+			color: rgb(200,200,200);
+		}
+	}
+
 	.invisible { display: none; }
+
+	.pagination {
+		margin: 20px 0;
+		overflow: hidden;
+
+		a {
+			display: block;
+			width: 50%;
+			text-decoration: none;
+		}
+
+		a:link,a:visited { color: $my-black; }
+		a:hover,a:active { color: $my-green; }
+
+		.page-new { float: left; text-align: left; }
+		.page-old { float: right; text-align: right; }
+	}
 }
 
 // Contact page styling
@@ -555,7 +588,7 @@ html {
 }
 
 // Footer styling
-.footer-main,.footer-contact,.footer-projects {
+.footer-main,.footer-contact,.footer-projects,.footer-thoughts {
 	background: $my-black;
 	color: $my-green;
 	height: 40px;
@@ -569,7 +602,7 @@ html {
 	margin-top: 50px;
 }
 
-.footer-contact,.footer-projects { position: relative; }
+.footer-contact,.footer-projects,.footer-thoughts { position: relative; }
 
 // Tablet restyling
 @media (min-width: 640px) {
@@ -588,18 +621,19 @@ html {
 
 	.social-icons { display: block; }
 
-	.projects-wrap {
+	.projects-wrap,.thoughts-wrap {
 		justify-content: space-between;
 
-		.project,.invisible { flex: 50%; }
+		.project,.thought,.invisible { flex: 45%; }
 
-		.project:nth-child(even) { padding-left: 25px; }
-		.project:nth-child(odd) { padding-right: 25px; }
+		.project:nth-child(even),.thought:nth-child(even) { margin-left: 5%; }
+		.project:nth-child(odd),.thought:nth-child(odd) { margin-right: 5%; }
 
 		.invisible {
 			display: block;
 			height: auto;
 			width: 100%;
+			margin-left: 5%;
 		}
 	}
 
@@ -708,15 +742,15 @@ html {
 		bottom: 70px;
 	}
 
-	.projects-wrap {
+	.projects-wrap,.thoughts-wrap {
 		justify-content: space-between;
 
-		.project,.invisible { flex: 1 / 3 * 100%; }
+		.project,.thought,.invisible { flex: 1 / 3 * 90%; }
 
-		.project:nth-child(even),.project:nth-child(odd) { padding: 0; }
-		.project:nth-child(3n) { padding-left: 25px; }
-		.project:nth-child(3n+1) { padding-right: 25px; }
-		.project:nth-child(3n+2) { padding: 0 25px; }
+		.project:nth-child(even),.project:nth-child(odd),.thought:nth-child(even),.thought:nth-child(odd) { margin: 0; }
+		.project:nth-child(3n),.thought:nth-child(3n) { margin-left: 2.5%; }
+		.project:nth-child(3n+1),.thought:nth-child(3n+1) { margin-right: 2.5%; }
+		.project:nth-child(3n+2),.thought:nth-child(3n+2) { margin: 0 2.5%; }
 
 		.invisible {
 			display: block;

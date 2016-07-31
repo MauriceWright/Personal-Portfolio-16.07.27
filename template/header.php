@@ -1,9 +1,11 @@
 <!doctype html>
 
-<html class="no-js" lang="en-US">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta http-equiv="Content-Language" content="en_US">
+        <meta name="google" value="notranslate">
         <title>Maurice Wright &bull; Innovation through code.</title>
         <meta name="description" content="Portfolio for innovator, Maurice Wright, of Tallahassee, FL. who uses code as a brush on the canvas of the web.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +58,7 @@
                             <span>Projects</span>
                         </a></li>
 
-                        <li><a class="nav-icon" href="" title="My Thoughts">
+                        <li><a class="nav-icon" href="thoughts.php" title="My Thoughts">
                             <?php include('img/bubbles2.svg'); ?>
 
                             <span>Thoughts</span>
