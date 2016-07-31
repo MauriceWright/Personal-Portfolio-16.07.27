@@ -401,6 +401,7 @@ html {
 	dd { display: none; }
 }
 
+// E-Mail form modal
 .email-modal { display: none; }
 
 .modal-show {
@@ -437,12 +438,37 @@ html {
 			}
 		}
 
-		p { clear: both; font-size: 12px; }
+		p { clear: both; font-size: 12px; margin: 5px 0 0 0; }
 
 		fieldset {
 			margin: 0;
 			padding: 0;
 			border: none;
+		}
+
+		.form-button {
+			border: 3px solid red;
+			border-radius: 25px;
+			background: rgba(255,0,0,0.2) url(../img/cross.svg) no-repeat 97% 50%;
+			background-size: 20px 20px;
+			padding: 5px 30px 5px 5px;
+			color: rgb(50,0,0);
+			outline: none;
+		}
+
+		.form-button:focus {
+			box-shadow: 0 0 5px 5px red;
+		}
+
+		.button-good {
+			border: 3px solid $my-green;
+			background: rgba(35,196,83,0.2) url(../img/checkmark.svg) no-repeat 97% 50%;
+			background-size: 20px 20px;
+			color: darken($my-green,25%);
+		}
+
+		.button-good:focus {
+			box-shadow: 0 0 5px 5px $my-green;
 		}
 	}
 }
