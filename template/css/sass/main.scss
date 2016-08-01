@@ -275,6 +275,73 @@ html {
 	}
 }
 
+// Thought post styling
+.thought-article {
+	time {
+		font-size: 14px;
+		color: $my-grey;
+	}
+
+	a:link,a:visited { color: $my-black; }
+	a:hover,a:active { color: $my-green; }
+
+	p {
+		code {
+			background-color: #f9f9f9;
+			border: 1px solid #eee;
+			font-size: 12px;
+			padding: 1px 3px;
+		}
+	}
+
+	ul,ol {
+		padding-left: 25px;
+	}
+
+	blockquote {
+		background-color: #f9f9f9;
+		border-left: 3px solid $my-green;
+		quotes: "\201C""\201D""\2018""\2019";
+		margin: 1em 0;
+		padding: 0 0 0 5px;
+
+		p { display: inline; }
+	}
+
+	blockquote:before {
+		content: open-quote;
+		color: $my-grey;
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;
+	}
+
+	blockquote:after {
+		content: close-quote;
+		color: $my-grey;
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.6em;
+	}
+
+	pre {
+		background-color: #f9f9f9;
+		border-left: 3px solid $my-green;
+		padding: 0 0 0 5px;
+		overflow: auto;
+	}
+
+	.image {
+		border-radius: 5px;
+		box-shadow: rgba(0,0,0,0.5) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 10px 0;
+		padding: 10px;
+		margin: 1em 0;
+
+		img { max-width: 100%; }
+		p { font-size: 12px; margin: 5px 0 0 0; }
+	}
+}
+
 // Contact page styling
 .contact-icons {
 	ul {
@@ -588,7 +655,7 @@ html {
 }
 
 // Footer styling
-.footer-main,.footer-contact,.footer-projects,.footer-thoughts {
+.footer-main,.footer-contact,.footer-projects,.footer-thoughts,.footer-thought {
 	background: $my-black;
 	color: $my-green;
 	height: 40px;
@@ -602,7 +669,7 @@ html {
 	margin-top: 50px;
 }
 
-.footer-contact,.footer-projects,.footer-thoughts { position: relative; }
+.footer-contact,.footer-projects,.footer-thoughts,.footer-thought { position: relative; }
 
 // Tablet restyling
 @media (min-width: 640px) {
