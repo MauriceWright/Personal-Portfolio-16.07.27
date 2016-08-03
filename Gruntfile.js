@@ -37,10 +37,19 @@ module.exports = function(grunt) {
       },
     },
 
+    copy: {
+      main: {
+        files: [
+          {expand: true, src: ['template/js/build.min.js'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/js/'},
+          {expand: true, src: ['template/css/build.css'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/css/'},
+        ],
+      },
+    },
+
     watch: {
       scripts: {
         files: ['template/css/sass/*.scss','template/js/dev/*.js','template/css/*.css'],
-        tasks: ['sass','autoprefixer','jshint','uglify'],
+        tasks: ['sass','autoprefixer','jshint','uglify','copy'],
         options: {
           spawn: false,
         },
@@ -53,6 +62,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
