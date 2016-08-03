@@ -36,4 +36,40 @@ $(document).ready(function(){
 		}
 		$('.header-cont').toggleClass('show-nav');
 	});
+
+	if($('.page-wrap').hasClass('projects-wrap')){
+		check_articles($('.projects-wrap'));
+
+		$(window).resize(function(){
+			check_articles($('.projects-wrap'));
+		});
+	}
+
+	function get_viewport() {
+		return $(window).width();
+	}
+
+	function check_articles($elm) {
+		// Remove any invisible elements
+		$('.invisible').remove();
+
+		// Get number of articles and viewport width
+		var $c=$('article').length,
+			$n=get_viewport()
+		;
+
+		if (639 < $n && $n < 800){
+			if(($c % 2) !== 0){
+				for (var b = (2 - ($c % 2)) - 1; b >= 0; b--) {
+					$elm.append('<article class="project invisible"></article>');
+				}
+			}
+		}else if(799 < $n){
+			if(($c % 3) !== 0){
+				for (var d = (3 - ($c % 3)) - 1; d >= 0; d--) {
+					$elm.append('<article class="project invisible"></article>');
+				}
+			}
+		}
+	}
 });
