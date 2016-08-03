@@ -40,8 +40,8 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, src: ['template/js/build.min.js'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/js/'},
-          {expand: true, src: ['template/css/build.css'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/css/'},
+          {expand: true, flatten: true, src: ['template/js/build.min.js'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/js/'},
+          {expand: true, flatten: true, src: ['template/css/build.css'], dest: '../wordpress/wp-content/themes/portfoliosixteen/lib/css/'},
         ],
       },
     },
