@@ -28,7 +28,7 @@ html {
 }
 
 // Index page body wrap
-.page-main {
+.page-home {
 	background: $my-grey url(../img/me_use_1024_H.jpg) no-repeat center bottom;
 	background-size: 100% auto;
 	min-height: 100%;
@@ -655,7 +655,7 @@ html {
 }
 
 // Footer styling
-.footer-main,.footer-contact,.footer-projects,.footer-thoughts,.footer-thought {
+.footer-home,.footer-contact,.footer-projects,.footer-thoughts,.footer-thought {
 	background: $my-black;
 	color: $my-green;
 	height: 40px;
@@ -673,7 +673,7 @@ html {
 
 // Tablet restyling
 @media (min-width: 640px) {
-	.page-main { background-position: 0 -50px; }
+	.page-home { background-position: 0 -50px; }
 
 	.contact-wrap { display: flex; }
 
@@ -728,7 +728,7 @@ html {
 
 // Small desktop styling
 @media (min-width: 800px) {
-	.page-main {
+	.page-home {
 		background-size: 65% auto;
 		background-position: bottom right;
 	}
@@ -840,7 +840,7 @@ html {
 		}
 	}
 
-	.page-main {
+	.page-home {
 		background-size: 50% auto;
 		background-position: 600px 0;
 	}

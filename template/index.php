@@ -1,4 +1,4 @@
-<? $page='main'; include('header.php'); ?>
+<? $page='home'; include('header.php'); ?>
 
 
         <!-- Content area -->
