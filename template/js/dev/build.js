@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var $win=$(window);
 
 	// Top navigation menu toggle
 	$('.menu-icon').click(function(){
@@ -40,13 +41,30 @@ $(document).ready(function(){
 	if($('.page-wrap').hasClass('projects-wrap')){
 		check_articles($('.projects-wrap'));
 
-		$(window).resize(function(){
+		$win.resize(function(){
 			check_articles($('.projects-wrap'));
 		});
 	}
 
+	if($('.page-wrap').hasClass('thoughts-wrap')){
+		check_articles($('.thoughts-wrap'));
+
+		$win.resize(function(){
+			check_articles($('.thoughts-wrap'));
+		});
+	}
+
+	if(!$('footer').hasClass('footer-home')){
+		var $w=$win.height(),
+			$c=$('body').height();
+
+		if($w >= $c){
+			$('footer').css('position','absolute');
+		}
+	}
+
 	function get_viewport() {
-		return $(window).width();
+		return $win.width();
 	}
 
 	function check_articles($elm) {
@@ -55,19 +73,20 @@ $(document).ready(function(){
 
 		// Get number of articles and viewport width
 		var $c=$('article').length,
-			$n=get_viewport()
+			$n=get_viewport(),
+			$s=$elm.children('article').last()
 		;
 
 		if (639 < $n && $n < 800){
 			if(($c % 2) !== 0){
 				for (var b = (2 - ($c % 2)) - 1; b >= 0; b--) {
-					$elm.append('<article class="project invisible"></article>');
+					$s.after('<article class="project invisible"></article>');
 				}
 			}
 		}else if(799 < $n){
 			if(($c % 3) !== 0){
 				for (var d = (3 - ($c % 3)) - 1; d >= 0; d--) {
-					$elm.append('<article class="project invisible"></article>');
+					$s.after('<article class="project invisible"></article>');
 				}
 			}
 		}

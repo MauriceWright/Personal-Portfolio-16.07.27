@@ -218,7 +218,43 @@ html {
 	}
 }
 
-.page-title { font-size: 36px; padding: 0 30px;}
+.page-header{
+	padding: 0 30px;
+	overflow: hidden;
+
+	.page-title { font-size: 36px; }
+
+	.linkedin-resume {
+		display: block;
+		padding: 5px 0;
+		height: 30px;
+		overflow: hidden;
+		margin: 1em 0;
+
+		svg,span {
+			display: block;
+			float: left;
+			height: 20px;
+		}
+
+		svg {
+			border: 1px solid black;
+			border-radius: 5px;
+			width: 20px;
+			padding: 3px;
+		}
+
+		span {
+			line-height: 20px;
+			width: auto;
+			margin-left: 5px;
+			text-decoration: underline;
+		}
+	}
+
+	.linkedin-resume:link,.linkedin-resume:visited { color: $my-black; }
+	.linkedin-resume:hover,.linkedin-resume:active { color: $my-green; }
+}
 
 // Projects & Thoughts page styling
 .projects-wrap,.thoughts-wrap {
@@ -272,8 +308,8 @@ html {
 		a:link,a:visited { color: $my-black; }
 		a:hover,a:active { color: $my-green; }
 
-		.page-new { float: left; text-align: left; }
-		.page-old { float: right; text-align: right; }
+		.link-prev { float: left; text-align: left; }
+		.link-next { float: right; text-align: right; }
 	}
 }
 
@@ -690,6 +726,19 @@ html {
 
 	.social-icons { display: block; }
 
+	.page-header {
+		.projects-title,.linkedin-resume { width: 50%; }
+		.projects-title { float: left; }
+
+		.linkedin-resume {
+			margin: 2em 0;
+			float: right;
+
+			svg,span { float: right; }
+			span { margin: 0 5px 0 0; }
+		}
+	}
+
 	.projects-wrap,.thoughts-wrap {
 		justify-content: space-between;
 
@@ -834,14 +883,10 @@ html {
 		background-position: 600px 0;
 	}
 
-	.page-wrap {
+	.page-wrap,.page-header,.footer-wrap {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
 
-	.footer-wrap {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 30px;
-	}
+	.footer-wrap { padding: 0 30px; }
 }
